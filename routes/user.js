@@ -73,10 +73,14 @@ router.post('/signup',async (req,res)=>{
             userId:user._id},JWT_SECRET);
         res.json({message:"logged in successfully", token:token})
          return;
-    }
+    }else if(!user){
+        res.status(411).json({
+            message:"user does not exist"
+        })
+    }else{
     res.status(411).json({
         message:"error while logging in"
-    })
+    })}
 })
 const updateBody =  zod.object({
     // username: zod.string().email(),

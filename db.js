@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { number } = require('zod');
-const  = process.env.DATABASE_URL ;
-mongoose.connect(mogoURL)
+const mongoURL = process.env.DATABASE_URL ;
+mongoose.connect(mongoURL)
 const userSchema = new mongoose.Schema({
     username: String,
     password: String,
