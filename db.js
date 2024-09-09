@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
-const { number } = require('zod');
+// const { number } = require('zod');
 const mongoURL = process.env.DATABASE_URL ;
-mongoose.connect(mongoURL)
+try{
+mongoose.connect('mongodb+srv://ankittiwari9602:%40nkit7742@cluster0.2hhinlk.mongodb.net/ankit')
+
 const userSchema = new mongoose.Schema({
     username: String,
     password: String,
@@ -29,4 +31,7 @@ const Account = mongoose.model('Account',accountSchema)
 module.exports ={
     User,
     Account
+}
+}catch(e){
+    console.log("can't connect to DB")
 }

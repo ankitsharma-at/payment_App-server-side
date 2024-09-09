@@ -14,8 +14,8 @@ router.get('/balance',async (req,res)=>{
     const me = await User.findOne({
         _id : req.userId
     })
-    console.log(req.userId)
-    console.log(me)
+    // console.log(req.userId)
+    // console.log(me)
     res.status(200).json({
         Balance: Balance.balance,
         firstName:me.firstName

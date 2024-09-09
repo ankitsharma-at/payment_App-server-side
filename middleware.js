@@ -13,10 +13,11 @@ const jwt = require('jsonwebtoken')
     const token = authHeader.split(" ")[1]
 
     try{
-        console.log(token);
+        // console.log(token);
         const decoded = jwt.verify(token, JWT_SECRET);
         
         req.userId = decoded.userId
+        // console.log(req.userId)
         next();
 
     }
