@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 // const { number } = require('zod');
 const mongoURL = process.env.DATABASE_URL ;
 try{
-mongoose.connect('mongodb+srv://ankittiwari9602:%40nkit7742@cluster0.2hhinlk.mongodb.net/ankit')
-
+mongoose.connect(process.env.DATABASE_URL)
 const userSchema = new mongoose.Schema({
     username: String,
     password: String,
